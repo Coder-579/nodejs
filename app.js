@@ -1,5 +1,11 @@
+var fs = require('fs');
 
-var stuff = require('./stuff');
+// var read = fs.readFileSync('readMe.txt', 'utf8');
 
-console.log(stuff.counter(['shaw', 'shank', 'redemption']))
-console.log(stuff.adder(5,6))
+// fs.writeFileSync('writeMe.txt', read)
+
+//async
+fs.readFile('reaDme.txt', 'utf8', function(err,data){
+  fs.writeFile('writeme.txt', data)
+})
+
