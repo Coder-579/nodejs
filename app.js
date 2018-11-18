@@ -1,5 +1,24 @@
+var events = require('events')
+var util = require('util')
 
-var stuff = require('./stuff');
+var Person = function(name){
+  this.name = name
+}
 
-console.log(stuff.counter(['shaw', 'shank', 'redemption']))
-console.log(stuff.adder(5,6))
+util.inherits(Person,events.EventEmitter)
+
+var james = new Person('james')
+var saif = new Person('saif')
+var sampath = new Person('sampath')
+
+var People = [james,saif,sampath];
+
+People.forEach(function(Person){
+  Person.on('speak',function(msg){
+      console.log(Person.name + 'said this ' + msg )
+  })
+})
+
+james.emit('speak','This is james')
+saif.emit('speak','OH great nice to meet you Mer. ')
+sampath.emit('speak','Thats cool')
