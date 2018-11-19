@@ -1,21 +1,12 @@
-var fs = require('fs');
+var http = require('http')
 
-//delete file
-// fs.unlink('writeme.txT')
+var server = http.createServer(function(req, res){
+  // console.log(req,'there was req now you will see res ', res)
+  console.log('req was made: ' + req.url)
+  res.writeHead(200, {'Content-Type': 'text/plain'})
+  res.end('Hey ninjas!!!')
+})
 
-//creating directory synchronus
-// fs.mkdirSync('stuff')
-//Delete directory
-// fs.rmdirSync('stuff')
-//Asynchronus method to delete directory
-// fs.mkdir('stuff', function(){
-//   fs.readFile('readme.txt', 'utf8', function( err, data){
-//     fs.writeFile('./stuff/writeME.txt', data);
-//   })
-// })
+server.listen(3000, '127.0.0.1')
 
-//Remove file then remove's the directory
-// fs.unlink('./stuff/writeme.txt',function(){
-//   fs.rmdir('stuff')
-// })
-// fs.rmdir('stuff')
+console.log('listening to port 3000')
