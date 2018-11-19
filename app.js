@@ -1,11 +1,21 @@
 var fs = require('fs');
 
-// var read = fs.readFileSync('readMe.txt', 'utf8');
+//delete file
+// fs.unlink('writeme.txT')
 
-// fs.writeFileSync('writeMe.txt', read)
+//creating directory synchronus
+// fs.mkdirSync('stuff')
+//Delete directory
+// fs.rmdirSync('stuff')
+//Asynchronus method to delete directory
+// fs.mkdir('stuff', function(){
+//   fs.readFile('readme.txt', 'utf8', function( err, data){
+//     fs.writeFile('./stuff/writeME.txt', data);
+//   })
+// })
 
-//async
-fs.readFile('reaDme.txt', 'utf8', function(err,data){
-  fs.writeFile('writeme.txt', data)
-})
-
+//Remove file then remove's the directory
+// fs.unlink('./stuff/writeme.txt',function(){
+//   fs.rmdir('stuff')
+// })
+// fs.rmdir('stuff')
